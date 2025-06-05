@@ -17,3 +17,25 @@ sudo apt-get install jenkins
 sudo systemctl enable jenkins
 sudo systemctl enable jenkins
 sudo systemctl status jenkins
+
+-----------
+Tomcat:
+This will allow traffic from anywhere
+1)Cd webapps/manager/META-INF ----> context.xml
+allow = “.*”
+
+
+
+
+This will configure the user of tomcat web app server
+2)conf/ --> tomcat-user.xml ---> and paste this for manager access
+<role rolename="manager-gui" />
+<user username="tomcat" password="tomcat" roles="manager-gui" />
+<role rolename="admin-gui" />  
+<user username="admin" password="admin" roles="manager-gui,admin-gui"/>
+
+
+3)Change port number
+
+
+--------------
